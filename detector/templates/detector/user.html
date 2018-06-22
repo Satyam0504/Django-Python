@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+    .alert {
+    padding: 20px;
+    background-color: #f44336; /* Red */
+    color: white;
+    margin-bottom: 15px;
+    }
+    /* The close button */
+    .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    }
+    /* When moving the mouse over the close button */
+    .closebtn:hover {
+        color: black;
+    }
+    </style>
+    <link rel = "stylesheet"
+         href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel = "stylesheet"
+         href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <title>Detector</title>
+</head>
+<body background="{% static 'detector/registration.jpg' %}">
+
+        <div>
+     <!--------------------------------------BOX FOR SHOWING FORM ERROR--------------------------------------------->
+        {% if errors %}
+        <div class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            {{errors.username}}
+            {{errors.name}}
+            {{errors.email}}
+            {{errors.password}}
+        </div>
+        {% endif %}
+        <object align="left" width="600">
+<header class="container center-align">
+        <form method="post">
+         {% csrf_token %}
+            <div>
+                <label for="name">Name: </label>
+                <input id="name" type="text" name="name" value={{ name }}>
+            </div>
+            <div>
+                <label for="address">Address: </label>
+                <input id="address" type="text" name="address" value={{ address }}>
+            </div>
+            <div>
+                <label for="contact">Contact: </label>
+                <input id="contact" type="text" name="contact" value={{ contact }}>
+            </div>
+            <div>
+                <label for="age">Age: </label>
+                <input id="age" type="text" name="age" value={{ age }}>
+            </div>
+            <div>
+                <label for="gender">Gender: </label>
+                <input id="gender" type="text" name="gender" value={{ gender }}>
+            </div>
+
+            <div>
+                <label for="email">Email: </label>
+                <input id="email" type="email" name="email" value={{ email }}>
+            </div>
+
+            <div>
+                <label for="password">Password: </label>
+                <input id="password" type="password" name="password" value={{ password }}>
+            </div>
+            <input type="submit" value="Sign Up">
+
+        </form>
+    </header>
+            </object>
+<!--------------------------------LINK FOR LOGIN PAGE------------------------------------------------------------->
+
+    <br> <br> <br> <br> <br> <br> <br><br><br><br>
+            <object align="right"><h3>Already a user? <a href="login/">Login</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp&nbsp&nbsp&nbsp</h3>
+    </object>;
+
+
+</body>
+</html>

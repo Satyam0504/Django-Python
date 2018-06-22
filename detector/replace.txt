@@ -1,0 +1,18 @@
+chest_pain-
+	asympt : 1
+	atyp_angina : 2
+	non_anginal : 3
+	typ_angina : 4
+blood_sugar-
+	t : 1
+	f : 0
+rest_electro-
+	normal : 1
+	left_vent_hyper : 2
+	st_t_wave_abno : 3
+exercise_angina-
+	yes : 1
+	no : 0
+disease-
+	positive : 1
+	negative : 0
